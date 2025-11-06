@@ -11,17 +11,16 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Main centered box */
 .dashboard-box {
   background: #2b2b2b;
   padding: 40px;
   border-radius: 15px;
   width: 500px;
-  max-height: 90vh; /* ensures it fits on screen */
-  overflow-y: auto; /* adds scroll if content grows */
+  max-height: 90vh; 
+  overflow-y: auto; 
   box-shadow: 0 0 20px rgba(0, 255, 127, 0.5);
   text-align: center;
-  border: 2px solid #00ff99; /* visible border around */
+  border: 2px solid #00ff99; 
 }
 
 

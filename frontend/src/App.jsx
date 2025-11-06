@@ -8,7 +8,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        {/* <Route path="/dashboard" element={<h1>Welcome to SlotSwapper!</h1>} /> */}
          <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>

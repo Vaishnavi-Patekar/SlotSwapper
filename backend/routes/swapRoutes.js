@@ -5,7 +5,6 @@ import authMiddleware from "../middleware/authMiddleware.js";
 const router = express.Router();
 
 
-// ✅ Get all swappable slots except the current user’s
 router.get("/swappable-slots", authMiddleware, async (req, res) => {
   try {
     const events = await Event.find({
@@ -19,12 +18,10 @@ router.get("/swappable-slots", authMiddleware, async (req, res) => {
 });
 
 
-// ✅ Create a new swap request
 router.post("/swap-request", authMiddleware, async (req, res) => {
   try {
     const { mySlotId, theirSlotId, receiverId } = req.body;
 
-    // Update both slots to indicate they’re pending swap
     await Event.findByIdAndUpdate(mySlotId, { status: "SWAP_PENDING" });
     await Event.findByIdAndUpdate(theirSlotId, { status: "SWAP_PENDING" });
 
@@ -42,7 +39,7 @@ router.post("/swap-request", authMiddleware, async (req, res) => {
 });
 
 
-// ✅ Respond to a swap (accept/reject)
+// Respond to a swap (accept/reject)
 router.post("/swap-response/:id", authMiddleware, async (req, res) => {
   try {
     const { status } = req.body;
