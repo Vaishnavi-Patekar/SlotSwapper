@@ -1,6 +1,7 @@
 import { useState } from "react";
 import API from "../api/Api";
 import { useNavigate } from "react-router-dom";
+import "./Auth.css";
 
 export default function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
